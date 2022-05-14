@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Advice generator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="stylesheet" href="./custom-style.css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-title">
+        <h3>A D V I C E # <span id="adviceId"></span></h3>
+      </div>
+      <div class="card-body">
+        <p id="advice"></p>
+      </div>
+      <div class="card-footer">
+        <p id="divider"></p>
+
+        <button class="button" onclick="getAdvice()">
+          <img class="button-img" src="./images/icon-dice.svg" alt="icon-dice.svg" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Shaz4584">Shahzad Barkati</a>.
+  </div>
+
+  <!-- Custom JS with Action -->
+  <script>
+    const getAdvice = async () => {
+      let data = await (await fetch("https://api.adviceslip.com/advice")).json();
+      document.getElementById('adviceId').textContent = "" + data.slip.id;
+      document.getElementById('advice').innerHTML = "&#8220;" + data.slip.advice + "&#8221;";
+    }
+
+    document.addEventListener("DOMContentLoaded", getAdvice());
+  </script>
+</body>
+
+</html>
