@@ -62,7 +62,7 @@ body {
 
 @media screen and (max-width: 375px) {
   body {
-    height: 65vh;
+    height: 70vh;
   }
   .card {
     max-width: 280px;
