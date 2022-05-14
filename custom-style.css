@@ -14,7 +14,7 @@ body {
 
 .card {
   width: 520px;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   padding: 1.5rem;
   border-radius: 10px;
   color: hsl(193, 38%, 86%);
@@ -32,7 +32,7 @@ body {
   height: 1rem;
 }
 
-.card-title {
+.card-title, h1 {
   color: hsl(150, 100%, 66%);
   font-size: 1rem;
 }
